@@ -51,7 +51,7 @@ def root():
 @app.get("/summary/")
 def earnings(ticker: str = Query(...,  description="Stock ticker symbol")):
     try:
-        scraping_agent_url = f"https://scraping-agent.onrender.com/scrape/?ticker={ticker}"
+        scraping_agent_url = f"https://scraping-agent-61gh.onrender.com/scrape/?ticker={ticker}"
 
         response = requests.get(scraping_agent_url)
 
