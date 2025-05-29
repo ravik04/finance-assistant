@@ -2,13 +2,13 @@ import streamlit as st
 import requests
 import pandas as pd
 
-API_AGENT_URL = "http://localhost:8000/price/"
-SCRAPING_AGENT_URL = "http://localhost:8001/scrape/"
-CONTROLLER_URL = "http://localhost:8002/summary/"
-RETRIEVER_AGENT_URL = "http://localhost:8003/news/"
-LANGUAGE_AGENT_URL = "http://localhost:8004/summarize/"
-ANALYSIS_AGENT_URL = "http://localhost:8005/analyze/"
-VOICE_AGENT_URL = "http://localhost:8006/speak/"
+API_AGENT_URL = "https://api-agent-xjrp.onrender.com/price/"
+SCRAPING_AGENT_URL = "https://scraping-agent-61gh.onrender.com/scrape/"
+CONTROLLER_URL = "https://controller-agent.onrender.com/summary/"
+RETRIEVER_AGENT_URL = "https://retriever-agent-48wb.onrender.com/news/"
+LANGUAGE_AGENT_URL = "https://language-agent-o8rv.onrender.com/summarize/"
+ANALYSIS_AGENT_URL = "https://analysis-agent.onrender.com/analyze/"
+VOICE_AGENT_URL = "https://voice-agent-58oi.onrender.com/speak/"
 
 st.set_page_config(page_title="Finance Assistant", layout="centered")
 st.title("Multi-Agent Market Brief")
