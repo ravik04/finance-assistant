@@ -78,12 +78,31 @@ if st.button("Run Market Brief"):
             f"Sentiment Analysis:\n{analysis}"
         )
 
-        # 7. Speak final summary
-        requests.get(VOICE_AGENT_URL, params={"text": final_brief})
+        # # 7. Speak final summary
+        # requests.get(VOICE_AGENT_URL, params={"text": final_brief})
 
-        # Show chart and results
+        # # Show chart and results
+        # st.subheader("🗣️ Spoken Market Brief")
+        # st.text_area("Summary", final_brief, height=300)
+
+        # 👇 JavaScript-based voice in browser
+        def speak_text(text):
+            st.components.v1.html(f"""
+            <script>
+            var msg = new SpeechSynthesisUtterance({repr(text)});
+            msg.rate = 1;
+            msg.pitch = 1;
+            msg.volume = 1;
+            msg.lang = 'en-US';
+            window.speechSynthesis.cancel();  // stop any existing
+            window.speechSynthesis.speak(msg);
+            </script>""", height=0)
+
+# Show chart and results
         st.subheader("🗣️ Spoken Market Brief")
         st.text_area("Summary", final_brief, height=300)
+        speak_text(final_brief)  # 👈 Use browser to speak
+
 
         st.subheader("5-Day Price Chart")
         if len(price_data) >= 2:
