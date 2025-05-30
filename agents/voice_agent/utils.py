@@ -1,7 +1,7 @@
 from gtts import gTTS
 import tempfile
 from fastapi.responses import FileResponse
-from agents.common.audio_utils import clean_text_for_speech
+from src.agents.common.audio_utils import clean_text_for_speech
 
 def speak_summary(summary):
     try:
