@@ -6,7 +6,7 @@ GROQ_API_URL = "https://api.groq.com/openai/v1/chat/completions"
 MODEL = "llama3-8b-8192"
 
 def summarize_headlines(ticker, headlines):
-    prompt = f"""Summarize(in short 50 words) the following recent news headlines for {ticker} into a single clear and concise paragraph:\n\n """
+    prompt = f"""Summarize(in short 50 words) the following recent news headlines for {ticker} into a single clear and concise paragraph(Do not include introductory phrases like 'Here is a summary'.):\n\n """
     for headline in headlines:
         prompt += f"- {headline}\n"
 
