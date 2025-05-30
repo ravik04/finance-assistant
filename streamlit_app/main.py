@@ -96,8 +96,7 @@ if st.button("Run Market Brief"):
             msg.lang = 'en-US';
             window.speechSynthesis.cancel();  // stop any existing
             window.speechSynthesis.speak(msg);
-            </script>
-            <button onclick="speak()">🔊 Speak Market Brief</button>""", height=50)
+            </script>""", height=0)
 
 # Show chart and results
         st.subheader("🗣️ Spoken Market Brief")
