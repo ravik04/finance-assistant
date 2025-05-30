@@ -59,7 +59,7 @@ if st.button("Run Market Brief"):
         # 4. Summarize news via language agent
         summarize = requests.get(LANGUAGE_AGENT_URL, params={"ticker": ticker, "headlines": news_string})
         news_summary = summarize.json().get("news_summary", "News summarization failed.")
-        print(news_string)
+
 
         # 5. Analyze sentiment via analysis agent
         analyze = requests.get(ANALYSIS_AGENT_URL, params={
@@ -73,7 +73,7 @@ if st.button("Run Market Brief"):
         final_brief = (
             f" {ticker} Market Brief\n\n"
             f"Price Summary:\n{price_summary}\n\n"
-            f"Earnings Summary:\n{earnings_summary}\n\n"
+            f"""Earnings Summary:\n{earnings_summary}\n\n"""
             f"News Summary:\n{news_summary}\n\n"
             f"Sentiment Analysis:\n{analysis}"
         )
@@ -99,7 +99,7 @@ if st.button("Run Market Brief"):
             </script>""", height=0)
 
 # Show chart and results
-        st.subheader("🗣️ Spoken Market Brief")
+        st.subheader("Spoken Market Brief")
         st.text_area("Summary", final_brief, height=300)
         speak_text(final_brief)  # 👈 Use browser to speak
 
