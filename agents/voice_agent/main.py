@@ -1,6 +1,6 @@
 from fastapi import FastAPI, Query
 from fastapi.middleware.cors import CORSMiddleware
-from agents.common.audio_utils import speak_summary
+from src.agents.common.audio_utils import speak_summary
 import os
 
 app = FastAPI()
