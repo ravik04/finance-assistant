@@ -1,14 +1,14 @@
 import sys
-# import os
+import os
 
-# sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), "..", "..")))
+sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), "..", "..")))
 
 # from agents.common.audio_utils import speak_summary
 
 
 import requests
 
-GROQ_API_KEY = "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"
+GROQ_API_KEY = os.getenv("GROQ_API_KEY")
 GROQ_API_URL = "https://api.groq.com/openai/v1/chat/completions"
 GROQ_MODEL = "llama3-70b-8192"
 
